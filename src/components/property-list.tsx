@@ -1,5 +1,7 @@
+import NoResults from "@/components/ui/no-results";
+import PropertyCard from "@/components/ui/property-card";
+
 import { Property } from "@/types/property";
-import NoResults from "./ui/no-results";
 
 interface PropertyListProps {
   title: string;
@@ -15,14 +17,14 @@ const PropertyList = ({ title, items }: PropertyListProps) => {
         className="
           grid
           grid-cols-1
-          sm:grid-cols-2
-          md:grid-cols-3
-          lg:grid-cols-4
+          sm:grid-cols-1
+          md:grid-cols-2
+          lg:grid-cols-3
           gap-4
         "
       >
         {items.map((item) => (
-          <div>{item.name}</div>
+          <PropertyCard key={item.id} data={item} />
         ))}
       </div>
     </div>

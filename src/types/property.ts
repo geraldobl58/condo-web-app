@@ -1,11 +1,12 @@
 import { Category } from "./category";
+
 import { Image } from "./image";
 
 export interface Property {
   id: string;
   category: Category;
   name: string;
-  images: Image;
+  images: Image[];
   address: string;
   neighborhood: string;
   price: string;
