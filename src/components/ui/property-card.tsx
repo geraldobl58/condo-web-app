@@ -1,5 +1,7 @@
 "use client";
 
+import { MouseEventHandler } from "react";
+
 import Image from "next/image";
 
 import { useRouter } from "next/navigation";
@@ -8,6 +10,8 @@ import { Bath, Bed, CarFront, Expand, Eye, Grid2X2 } from "lucide-react";
 
 import IconButton from "@/components/ui/icon-button";
 import Currency from "@/components/ui/currency";
+
+import usePreviewModal from "@/hooks/use-preview-modal";
 
 import { Property } from "@/types/property";
 
@@ -18,8 +22,16 @@ interface PropertyCardProps {
 const PropertyCard = ({ data }: PropertyCardProps) => {
   const router = useRouter();
 
+  const previewModal = usePreviewModal();
+
   const handleClick = () => {
     router.push(`/property/${data.id}`);
+  };
+
+  const onPreview: MouseEventHandler<HTMLButtonElement> = (event) => {
+    event.stopPropagation();
+
+    previewModal.onOpen(data);
   };
 
   return (
@@ -55,11 +67,11 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
         >
           <div className="flex gap-x-6 justify-center">
             <IconButton
-              onClick={() => {}}
+              onClick={onPreview}
               icon={<Expand size={20} className="text-gray-600" />}
             />
             <IconButton
-              onClick={() => {}}
+              onClick={handleClick}
               icon={<Eye size={20} className="text-gray-600" />}
             />
           </div>

@@ -5,6 +5,8 @@ import { Montserrat } from "next/font/google";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 
+import ModalProvider from "@/providers/modal-preview";
+
 import "./globals.css";
 
 const font = Montserrat({
@@ -26,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ModalProvider />
         <Navbar />
         {children}
         <Footer />
