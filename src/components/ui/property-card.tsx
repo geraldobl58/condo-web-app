@@ -19,7 +19,7 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/properties/${data.id}`);
+    router.push(`/property/${data.id}`);
   };
 
   return (
@@ -75,11 +75,11 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
       <div className="flex items-center justify-between">
         <div className="flex">
           <Bed size={20} />
-          <p className="ml-2 text-sm">{data?.bedrooms}</p>
+          <p className="ml-2 text-sm">{data?.bathrooms}</p>
         </div>
         <div className="flex items-center">
           <Bath size={20} />
-          <p className="ml-2 text-sm">{data?.bathrooms}</p>
+          <p className="ml-2 text-sm">{data?.bedrooms}</p>
         </div>
         <div className="flex items-center">
           <CarFront size={20} />
@@ -87,7 +87,7 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
         </div>
         <div className="flex items-center">
           <Grid2X2 size={20} />
-          <p className="ml-2 text-sm">{data?.land}</p>
+          <p className="ml-2 text-sm">{data?.land}m²</p>
         </div>
       </div>
       <div className="flex items-center justify-between">
