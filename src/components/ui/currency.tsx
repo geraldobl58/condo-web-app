@@ -1,3 +1,5 @@
+"use client";
+
 import { formattedPrice } from "@/lib/utils";
 import { useEffect, useState } from "react";
 
