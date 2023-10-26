@@ -16,7 +16,8 @@ const NavbarActions = () => {
 
   return (
     <div className="ml-auto flex items-center gap-x-4">
-      <Button className="bg-white text-orange-600">Anunciar</Button>
+      {/* <Button className="bg-white text-orange-600">Anunciar</Button> */}
+      email@email.com
     </div>
   );
 };
