@@ -6,6 +6,7 @@ import { Property } from "@/types/property";
 
 interface Query {
   categoryId?: string;
+  bathroomId?: string;
   isFeatured?: boolean;
 }
 
@@ -14,6 +15,7 @@ const getProperties = async (query: Query): Promise<Property[]> => {
     url: `http://localhost:3000/api/properties`,
     query: {
       categoryId: query.categoryId,
+      bathroomId: query.bathroomId,
       isFeatured: query.isFeatured,
     },
   });
