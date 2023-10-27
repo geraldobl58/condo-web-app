@@ -1,3 +1,4 @@
+import { Bathroom } from "./bathroom";
 import { Category } from "./category";
 
 import { Image } from "./image";
@@ -12,8 +13,8 @@ export interface Property {
   price: string;
   description: string;
   type: string;
+  bathroom: Bathroom;
   bedrooms: number;
-  bathrooms: number;
   garage: number;
   land: number;
   isFeatured: boolean;
