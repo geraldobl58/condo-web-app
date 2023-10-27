@@ -86,11 +86,11 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
       </div>
       <div className="flex items-center justify-between">
         <div className="flex">
-          <Bed size={20} />
-          <p className="ml-2 text-sm">{data?.bathrooms}</p>
+          <Bath size={20} />
+          <p className="ml-2 text-sm">{data?.bathroom?.quantity}</p>
         </div>
         <div className="flex items-center">
-          <Bath size={20} />
+          <Bed size={20} />
           <p className="ml-2 text-sm">{data?.bedrooms}</p>
         </div>
         <div className="flex items-center">

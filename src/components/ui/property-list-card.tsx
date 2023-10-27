@@ -33,6 +33,8 @@ const PropertyListCard = ({ data }: PropertyListCardProps) => {
         rounded-xl
         p-3
         space-y-4
+        ml-10
+        w-[980px]
       "
     >
       <div className="relative">
@@ -53,12 +55,14 @@ const PropertyListCard = ({ data }: PropertyListCardProps) => {
             </p>
             <div className="flex datas-center justify-between mt-5">
               <div className="flex">
-                <Bed size={20} />
-                <p className="ml-2 text-sm">{data?.bathrooms} Quarto(s)</p>
+                <Bath size={20} />
+                <p className="ml-2 text-sm">
+                  {data?.bathroom?.quantity} Banheiro(s)
+                </p>
               </div>
               <div className="flex datas-center">
-                <Bath size={20} />
-                <p className="ml-2 text-sm">{data?.bedrooms} Banheiro(s)</p>
+                <Bed size={20} />
+                <p className="ml-2 text-sm">{data?.bedrooms} Quarto(s)</p>
               </div>
               <div className="flex datas-center">
                 <CarFront size={20} />

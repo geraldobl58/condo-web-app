@@ -7,10 +7,10 @@ import qs from "query-string";
 import Button from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
-import { Property } from "@/types/property";
+import { Bathroom } from "@/types/bathroom";
 
 interface FilterProps {
-  data: Property[];
+  data: Bathroom[];
   name: string;
   valueKey: string;
 }
@@ -68,7 +68,7 @@ const Filter = ({ data, name, valueKey }: FilterProps) => {
               )}
               onClick={() => onClick(item.id)}
             >
-              {item.name}
+              {item.quantity}
             </Button>
           </div>
         ))}
