@@ -8,14 +8,27 @@ import Button from "@/components/ui/button";
 
 import { cn } from "@/lib/utils";
 import { Bathroom } from "@/types/bathroom";
+import { Bedroom } from "@/types/bedroom";
+import { Garage } from "@/types/garage";
+import { Kind } from "@/types/kind";
 
 interface FilterProps {
-  data: Bathroom[];
+  bathroom?: Bathroom[];
+  bedroom?: Bedroom[];
+  garage?: Garage[];
+  kind?: Kind[];
   name: string;
   valueKey: string;
 }
 
-const Filter = ({ data, name, valueKey }: FilterProps) => {
+const Filter = ({
+  bathroom,
+  bedroom,
+  garage,
+  kind,
+  name,
+  valueKey,
+}: FilterProps) => {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -51,7 +64,7 @@ const Filter = ({ data, name, valueKey }: FilterProps) => {
       <h3 className="text-lg font-semibold">{name}</h3>
       <hr className="my-4" />
       <div className="flex flex-wrap gap-2">
-        {data.map((item) => (
+        {bathroom?.map((item) => (
           <div key={item.id} className="flex items-center">
             <Button
               className={cn(
@@ -69,6 +82,75 @@ const Filter = ({ data, name, valueKey }: FilterProps) => {
               onClick={() => onClick(item.id)}
             >
               {item.quantity}
+            </Button>
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {bedroom?.map((item) => (
+          <div key={item.id} className="flex items-center">
+            <Button
+              className={cn(
+                `
+                rounded-md
+                text-sm
+                text-gray-800
+                p-2
+                bg-white
+                border
+                border-gray-300
+              `,
+                selectedValue === item.id && "bg-black text-white"
+              )}
+              onClick={() => onClick(item.id)}
+            >
+              {item.quantity}
+            </Button>
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {garage?.map((item) => (
+          <div key={item.id} className="flex items-center">
+            <Button
+              className={cn(
+                `
+                rounded-md
+                text-sm
+                text-gray-800
+                p-2
+                bg-white
+                border
+                border-gray-300
+              `,
+                selectedValue === item.id && "bg-black text-white"
+              )}
+              onClick={() => onClick(item.id)}
+            >
+              {item.quantity}
+            </Button>
+          </div>
+        ))}
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {kind?.map((item) => (
+          <div key={item.id} className="flex items-center">
+            <Button
+              className={cn(
+                `
+                rounded-md
+                text-sm
+                text-gray-800
+                p-2
+                bg-white
+                border
+                border-gray-300
+              `,
+                selectedValue === item.id && "bg-black text-white"
+              )}
+              onClick={() => onClick(item.id)}
+            >
+              {item.name}
             </Button>
           </div>
         ))}

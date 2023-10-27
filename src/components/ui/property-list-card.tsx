@@ -62,11 +62,13 @@ const PropertyListCard = ({ data }: PropertyListCardProps) => {
               </div>
               <div className="flex datas-center">
                 <Bed size={20} />
-                <p className="ml-2 text-sm">{data?.bedrooms} Quarto(s)</p>
+                <p className="ml-2 text-sm">
+                  {data?.bedroom?.quantity} Quarto(s)
+                </p>
               </div>
               <div className="flex datas-center">
                 <CarFront size={20} />
-                <p className="ml-2 text-sm">{data?.garage} Garagem</p>
+                <p className="ml-2 text-sm">{data?.garage?.quantity} Garagem</p>
               </div>
               <div className="flex datas-center">
                 <Grid2X2 size={20} />

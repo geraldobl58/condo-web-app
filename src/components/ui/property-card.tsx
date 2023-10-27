@@ -91,11 +91,11 @@ const PropertyCard = ({ data }: PropertyCardProps) => {
         </div>
         <div className="flex items-center">
           <Bed size={20} />
-          <p className="ml-2 text-sm">{data?.bedrooms}</p>
+          <p className="ml-2 text-sm">{data?.bedroom.quantity}</p>
         </div>
         <div className="flex items-center">
           <CarFront size={20} />
-          <p className="ml-2 text-sm">{data?.garage}</p>
+          <p className="ml-2 text-sm">{data?.garage.quantity}</p>
         </div>
         <div className="flex items-center">
           <Grid2X2 size={20} />

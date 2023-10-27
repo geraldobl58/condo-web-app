@@ -22,7 +22,9 @@ const Info = ({ data }: InfoProps) => {
         <p className="text-sm text-gray-500 pb-2 pt-2">
           Endereço: {data?.address}
         </p>
-        <p className="text-sm text-gray-500 pb-2 pt-2">Tipo: {data?.type}</p>
+        <p className="text-sm text-gray-500 pb-2 pt-2">
+          Tipo: {data?.kind?.name}
+        </p>
         <Currency value={data?.price} />
       </div>
       <div className="flex items-center justify-between mt-5">
@@ -32,11 +34,11 @@ const Info = ({ data }: InfoProps) => {
         </div>
         <div className="flex items-center">
           <Bed size={20} />
-          <p className="ml-2 text-sm">{data?.bedrooms} Quarto(s)</p>
+          <p className="ml-2 text-sm">{data?.bedroom?.quantity} Quarto(s)</p>
         </div>
         <div className="flex items-center">
           <CarFront size={20} />
-          <p className="ml-2 text-sm">{data?.garage} Garagem</p>
+          <p className="ml-2 text-sm">{data?.garage?.quantity} Garagem</p>
         </div>
         <div className="flex items-center">
           <Grid2X2 size={20} />
